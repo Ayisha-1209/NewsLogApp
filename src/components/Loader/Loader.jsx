@@ -1,6 +1,6 @@
-import React from 'react';
-import Lottie from 'lottie-react';
-import loaderAnimation from '../assets/Loader.json'; 
+import React from "react";
+import Lottie from "lottie-react";
+import loaderAnimation from "../assets/Loader.json";
 
 const Loader = () => {
   return (

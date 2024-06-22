@@ -51,7 +51,11 @@ const Button = ({
 }) => {
   return (
     <button
-      className={`${className} flex items-center justify-center text-center hover:bg-red-300 hover:text-black-900 cursor-pointer ${(shape && shapes[shape]) || ""} ${(size && sizes[size]) || ""} ${(variant && variants[variant]?.[color]) || ""}`}
+      className={`${className} flex items-center justify-center text-center hover:bg-red-300 hover:text-black-900 cursor-pointer ${
+        (shape && shapes[shape]) || ""
+      } ${(size && sizes[size]) || ""} ${
+        (variant && variants[variant]?.[color]) || ""
+      }`}
       {...restProps}
     >
       {!!leftIcon && leftIcon}
@@ -67,7 +71,19 @@ Button.propTypes = {
   leftIcon: PropTypes.node,
   rightIcon: PropTypes.node,
   shape: PropTypes.oneOf(["round", "circle"]),
-  size: PropTypes.oneOf(["2xl", "3xl", "sm", "xs", "lg", "4xl", "7xl", "5xl", "md", "xl", "6xl"]),
+  size: PropTypes.oneOf([
+    "2xl",
+    "3xl",
+    "sm",
+    "xs",
+    "lg",
+    "4xl",
+    "7xl",
+    "5xl",
+    "md",
+    "xl",
+    "6xl",
+  ]),
   variant: PropTypes.oneOf(["fill", "outline"]),
   color: PropTypes.oneOf([
     "indigo_900_01",

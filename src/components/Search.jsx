@@ -2,12 +2,13 @@ import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 
 const Search = () => {
-  const [keyword, setKeyword] = useState("");
-  const [articles, setArticles] = useState([]);
-  const [error, setError] = useState("");
-  const [showDropdown, setShowDropdown] = useState(false);
-  const dropdownRef = useRef(null);
+  const [keyword, setKeyword] = useState(""); // State for search keyword
+  const [articles, setArticles] = useState([]); // State for fetched articles
+  const [error, setError] = useState(""); // State for error message
+  const [showDropdown, setShowDropdown] = useState(false); // State to toggle dropdown visibility
+  const dropdownRef = useRef(null); // Ref for dropdown element
 
+  // Effect to fetch articles based on keyword
   useEffect(() => {
     const fetchArticles = async () => {
       if (keyword.trim().length === 0) {
@@ -17,19 +18,16 @@ const Search = () => {
       }
 
       try {
-        const response = await axios.get(
-          "https://newsapi.org/v2/everything",
-          {
-            params: {
-              q: keyword,
-              apiKey: "5bf41eb950f54acba3bfe4d6b6c75074",
-              sortBy: "relevancy",
-              pageSize: 4,
-              page: 1,
-              urlToImage:true
-            },
-          }
-        );
+        const response = await axios.get("https://newsapi.org/v2/everything", {
+          params: {
+            q: keyword,
+            apiKey: "5bf41eb950f54acba3bfe4d6b6c75074",
+            sortBy: "relevancy",
+            pageSize: 4,
+            page: 1,
+            urlToImage: true,
+          },
+        });
         setArticles(response.data.articles);
         setShowDropdown(true); // Show dropdown when there are results
         setError("");
@@ -46,27 +44,24 @@ const Search = () => {
     }, 300);
 
     return () => clearTimeout(delayDebounceFn);
-  }, [keyword]);
+  }, [keyword]); // Dependency on keyword to trigger fetch
 
+  // Handle click outside dropdown to close it
   const handleOutsideClick = (event) => {
-    // Check if the click occurred inside the dropdown or the input field
     if (
-      dropdownRef.current &&
-      dropdownRef.current.contains(event.target) ||
+      (dropdownRef.current && dropdownRef.current.contains(event.target)) ||
       event.target.className ===
         "border border-gray-300 rounded px-3 py-1 focus:outline-none focus:ring-2 focus:ring-blue-500"
     ) {
       return;
     }
 
-    // Click occurred outside, so close the dropdown
-    setShowDropdown(false);
+    setShowDropdown(false); // Close dropdown if clicked outside
   };
 
+  // Effect to add click event listener for closing dropdown
   useEffect(() => {
-    // Add event listener on component mount
     document.addEventListener("click", handleOutsideClick);
-    // Cleanup: remove event listener on component unmount
     return () => {
       document.removeEventListener("click", handleOutsideClick);
     };
@@ -89,22 +84,22 @@ const Search = () => {
         >
           <ul className="py-1">
             {articles.length === 0 && !error && (
-              <li className="px-4 py-2 text-sm text-gray-700">Type Something...</li>
+              <li className="px-4 py-2 text-sm text-gray-700">
+                Type Something...
+              </li>
             )}
             {error && (
               <li className="px-4 py-2 text-sm text-red-600">{error}</li>
             )}
             {articles.map((article, index) => (
-              <li 
+              <li
                 key={index}
                 className="px-4 border-b-2 py-2 text-sm text-gray-900 hover:bg-gray-100"
               >
-                <a
-                  href={article.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {article.urlToImage && <img src={article.urlToImage} alt=""  />}
+                <a href={article.url} target="_blank" rel="noopener noreferrer">
+                  {article.urlToImage && (
+                    <img src={article.urlToImage} alt="" />
+                  )}
                   {article.title}
                 </a>
               </li>
