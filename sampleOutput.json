@@ -1,0 +1,36 @@
+{
+  "status": "ok",
+  "totalResults": 3,
+  "articles": [
+    {
+      "source": { "id": "ars-technica", "name": "Ars Technica" },
+      "author": "Lily Hay Newman, wired.com",
+      "title": "How Microsoft’s cybercrime unit has evolved to combat increased threats",
+      "description": "Microsoft has honed its strategy to disrupt global cybercrime and state-backed actors.",
+      "url": "https://www.wired.com/story/microsoft-digital-crime-unit-2023/",
+      "urlToImage": "https://cdn.arstechnica.net/wp-content/uploads/2013/12/msdcc-636x215.png",
+      "publishedAt": "2023-12-17T12:05:25+00:00",
+      "content": "Microsoft's Cybercrime Center.\r\n62\r\nGovernments and the tech industry around the world have been scrambling in recent years to curb the rise of online scamming and cybercrime. Yet even with progress … [+4475 chars]"
+    },
+    {
+      "source": { "id": "fox-news", "name": "Fox News" },
+      "author": "Adam Sabes",
+      "title": "Senate sex tape: Congressional staffer allegedly seen in leaked video could face charges, legal expert says",
+      "description": "A lawyer says charges are possible for the alleged Congressional staffer who filmed a sex tape inside a Senate hearing room, but depends on a few factors.",
+      "url": "https://www.foxnews.com/politics/senate-sex-tape-congressional-staffer-allegedly-seen-leaked-video-could-face-charges-lawyer-says",
+      "urlToImage": "https://static.foxnews.com/foxnews.com/content/uploads/2023/12/GettyImages-1228979391.jpg",
+      "publishedAt": "2023-12-16T23:56:08Z",
+      "content": "Read this article for free!\r\nPlus get unlimited access to thousands of articles, videos and more with your free account!\r\nPlease enter a valid email address.\r\nBy entering your email, you are agreeing… [+3833 chars]"
+    },
+    {
+      "source": { "id": "axios", "name": "Axios" },
+      "author": "Tim Baysinger",
+      "title": "Hollywood shuts down as actors join writers on strike",
+      "description": "A work stoppage by thousands of on-screen performers is expected to bring the industry to a halt.",
+      "url": "https://www.axios.com/2023/07/13/sag-aftra-wga-strike-hollywood",
+      "urlToImage": "https://images.axios.com/BsO_He3gjjKmpAfFwgqtLL3nOm8=/0x0:4000x2250/1366x768/2023/06/30/1688149702453.jpg",
+      "publishedAt": "2023-07-13T17:42:29Z",
+      "content": "SAG-AFTRA, the union that represents Hollywood actors, will strike for the first time since 1980 after failing to reach a new labor deal with the major studios.\r\nWhy it matters: The actors' strike, w… [+4148 chars]"
+    }
+  ]
+}

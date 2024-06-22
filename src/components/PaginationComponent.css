@@ -1,0 +1,18 @@
+.custom-pagination .page-link {
+    color: rgb(37, 6, 6); /* Change the text color */
+    background-color: #f8f9fa; /* Change the background color */
+    border-color: #c4bebe85; /* Change the border color */
+    font-weight: 500;
+}
+
+.custom-pagination .page-link:hover {
+    color: #fff; /* Change the text color on hover */
+    background-color: #bf3001; /* Change the background color on hover */
+    border-color: #007bff; /* Change the border color on hover */
+}
+
+.custom-pagination .page-item.active .page-link {
+    background-color: #bf3001; /* Change the active page background color */
+    border-color: #3a0e0e; /* Change the active page border color */
+    color: #fff; /* Change the active page text color */
+}
